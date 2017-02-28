@@ -1,10 +1,8 @@
-package com.portalsoup.annotations.processors;
+package com.jcleary.annotations.processors;
 
-import com.portalsoup.annotations.Hack;
+import com.jcleary.annotations.Hack;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.DateTimeFormatterBuilder;
 
 import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.RoundEnvironment;

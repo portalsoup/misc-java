@@ -1,4 +1,4 @@
-package com.portalsoup.annotations;
+package com.jcleary.annotations;
 
 
 /**
