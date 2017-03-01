@@ -1,6 +1,8 @@
 package com.jcleary.annotations;
 
 
+import java.lang.annotation.Retention;
+
 /**
  * Created by portalsoup on 2/28/17.
  */
