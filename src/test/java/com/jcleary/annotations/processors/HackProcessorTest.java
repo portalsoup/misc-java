@@ -41,7 +41,6 @@ public class HackProcessorTest {
         };
 
         assertThat(compiler.compileWithProcessor(processor, sourceFiles), equalTo(true));
-        //verifyNoMoreInteractions(mockMessager);
         verify(mockMessager, times(1)).printMessage(
                 Matchers.eq(Kind.NOTE),
                 Matchers.anyString(),
@@ -57,7 +56,6 @@ public class HackProcessorTest {
         };
 
         assertThat(compiler.compileWithProcessor(processor, sourceFiles), equalTo(true));
-        //verifyNoMoreInteractions(mockMessager);
         verify(mockMessager, times(1)).printMessage(
                 Matchers.eq(Kind.ERROR),
                 Matchers.anyString(),
@@ -73,7 +71,6 @@ public class HackProcessorTest {
         };
 
         assertThat(compiler.compileWithProcessor(processor, sourceFiles), equalTo(true));
-        //verifyNoMoreInteractions(mockMessager);
         verify(mockMessager, times(1)).printMessage(
                 Matchers.eq(Kind.WARNING),
                 Matchers.anyString(),
@@ -89,7 +86,6 @@ public class HackProcessorTest {
         };
 
         assertThat(compiler.compileWithProcessor(processor, sourceFiles), equalTo(true));
-        //verifyNoMoreInteractions(mockMessager);
         verify(mockMessager, times(1)).printMessage(
                 Matchers.eq(Kind.NOTE),
                 Matchers.anyString(),
@@ -105,29 +101,9 @@ public class HackProcessorTest {
         };
 
         assertThat(compiler.compileWithProcessor(processor, sourceFiles), equalTo(true));
-        //verifyNoMoreInteractions(mockMessager);
         verify(mockMessager, times(1)).printMessage(
                 Matchers.eq(Kind.ERROR),
                 Matchers.anyString(),
                 Matchers.isA(Element.class));
-    }
-
-
-    private void verifyPrintMessage(Kind kind, String message, String elementName, String annotationName) {
-        verify(mockMessager).printMessage(
-                Matchers.eq(kind),
-                Matchers.eq(message),
-                Matchers.argThat(ToStringMatcher.hasToString(elementName, Element.class)),
-                Matchers.argThat(ToStringMatcher.hasToString(annotationName, AnnotationMirror.class)));
-    }
-
-    private void verifyPrintMessage(
-            Kind kind, String message, String elementName, String annotationName, String annotationElementName) {
-        verify(mockMessager).printMessage(
-                Matchers.eq(kind),
-                Matchers.eq(message),
-                Matchers.argThat(ToStringMatcher.hasToString(elementName, Element.class)),
-                Matchers.argThat(ToStringMatcher.hasToString(annotationName, AnnotationMirror.class)),
-                Matchers.argThat(ToStringMatcher.hasToString(annotationElementName, AnnotationValue.class)));
     }
 }
