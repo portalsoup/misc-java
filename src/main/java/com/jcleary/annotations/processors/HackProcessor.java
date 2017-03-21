@@ -32,7 +32,7 @@ public class HackProcessor extends AbstractProcessor {
         return processingEnv.getTypeUtils();
     }
 
-    private Elements getElementUtils() {
+    private Elements elementUtils() {
         return processingEnv.getElementUtils();
     }
 
@@ -168,7 +168,7 @@ public class HackProcessor extends AbstractProcessor {
      * @return the {@link TypeElement} and {@link DeclaredType} representing the class with name {@code className}
      */
     private ElementTypePair getType(String className) {
-        TypeElement typeElement = getElementUtils().getTypeElement(className);
+        TypeElement typeElement = elementUtils().getTypeElement(className);
         DeclaredType declaredType = typeUtils().getDeclaredType(typeElement);
         return new ElementTypePair(typeElement, declaredType);
     }
